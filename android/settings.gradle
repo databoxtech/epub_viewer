@@ -1,1 +1,6 @@
 rootProject.name = 'epub_viewer'
+sourceControl {
+    gitRepository('https://github.com/databoxtech/Folioreader-Android-1.git') {
+        producesModule('com.folioreader:folioreader')
+    }
+}

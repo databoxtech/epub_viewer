@@ -3,6 +3,8 @@ package com.jideguru.epub_viewer;
 import android.app.Activity;
 import android.content.Context;
 
+import com.folioreader.Config;
+
 import java.util.Map;
 
 import io.flutter.plugin.common.BinaryMessenger;
@@ -46,6 +48,8 @@ public class EpubViewerPlugin implements MethodCallHandler {
       Boolean enableTts = Boolean.parseBoolean(arguments.get("enableTts").toString());
       config = new ReaderConfig(context,identifier,themeColor,
               scrollDirection,allowSharing, enableTts,nightMode);
+      config.config.setShowRemainingIndicator(true);
+      config.config.setAllowedDirection(Config.AllowedDirection.VERTICAL_AND_HORIZONTAL);
 
     } else if (call.method.equals("open")){
 

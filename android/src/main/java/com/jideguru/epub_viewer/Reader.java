@@ -63,7 +63,7 @@ public class Reader implements OnHighlightListener, ReadLocatorListener, FolioRe
                        folioReader.setReadLocator(readLocator);
                    }
                    folioReader.setConfig(readerConfig.config, true)
-                           .openBook(path);  
+                           .openBook(path);
                } catch (Exception e) {
                    e.printStackTrace();
                }
@@ -166,7 +166,7 @@ public class Reader implements OnHighlightListener, ReadLocatorListener, FolioRe
         Log.i("readLocator", "-> saveReadLocator -> " + readLocator.toJson());
 
         if (pageEventSink != null){
-            pageEventSink.success(readLocator.toJson());
+            pageEventSink.success("{\"type\": \"locator\", \"data\": ".concat(readLocator.toJson()).concat("}"));
         }
     }
 
